@@ -1,4 +1,5 @@
 import Img from "next/image";
+import css from "./styles.module.css";
 
 export type WorkflowRun = {
   name: string;
@@ -10,7 +11,10 @@ export type WorkflowRun = {
 };
 
 export function WorkflowRun(props: WorkflowRun) {
-  return <div className={`card ${props.status} ${props.conclusion}`}>
+  const status = css[props.status];
+  const conclusion = css[props.conclusion];
+
+  return <div className={`${css.card} ${status} ${conclusion}`}>
     <Img src={props.avatar} alt={props.actor} width="20" height="20" />
     <p>{props.name}</p>
     <p>{props.branch}</p>

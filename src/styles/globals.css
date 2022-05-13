@@ -15,35 +15,3 @@ a {
 * {
   box-sizing: border-box;
 }
-
-.card {
-  padding: 10px;
-  position: relative;
-  border-radius: 4px;
-}
-
-.card p {
-  margin: 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.card img {
-  right: 10px;
-  bottom: 10px;
-  border-radius: 50%;
-  float: right;
-}
-
-.success {
-  background: rgba(160, 255, 160);
-}
-
-.skipped {
-  background: #eee;
-}
-
-.failure {
-  background: rgb(255, 160, 160);
-}

@@ -1,0 +1,32 @@
+.card {
+  padding: 10px;
+  position: relative;
+  border-radius: 4px;
+  background: #555;
+}
+
+.card p {
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card img {
+  right: 10px;
+  bottom: 10px;
+  border-radius: 50%;
+  float: right;
+}
+
+.card.success {
+  background: rgba(160, 255, 160);
+}
+
+.card.skipped {
+  background: #eee;
+}
+
+.card.failure {
+  background: rgb(255, 160, 160);
+}
