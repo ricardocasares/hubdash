@@ -30,10 +30,10 @@ a {
 }
 
 .card img {
-  position: absolute;
   right: 10px;
   bottom: 10px;
   border-radius: 50%;
+  float: right;
 }
 
 .success {
