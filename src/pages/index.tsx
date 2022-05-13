@@ -61,8 +61,10 @@ const Home: NextPage = () => {
 
 
   return <div>
-    <Head><title>hubdash</title></Head>
-    <input type="text" onChange={onChange} />
+    <Head>
+      <title>hubdash</title>
+    </Head>
+    <input type="text" placeholder="owner/repo" onChange={onChange} />
     <button onClick={onClick}>Add</button>
     <div>{repos.map(repo => <RepositoryWorkflowRuns key={repo} repo={repo} />)}</div>
   </div>;
