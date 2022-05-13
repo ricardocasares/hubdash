@@ -5,8 +5,9 @@ export type State = {
   repos: string[];
 };
 
-export type Action = AddRepoAction | AddTokenAction;
+export type Action = AddRepoAction | DelRepoAction | AddTokenAction;
 export type AddRepoAction = { type: 'ADD_REPO'; payload: string; };
+export type DelRepoAction = { type: 'DEL_REPO'; payload: string; };
 export type AddTokenAction = { type: 'ADD_TOKEN'; payload: string; };
 export type StateContext = { state: State; dispatch: Dispatch<Action>; };
 
@@ -19,6 +20,9 @@ const stateReducer: Reducer<State, Action> = (state, action) => {
       return { ...state, token: action.payload };
     case 'ADD_REPO':
       return { ...state, repos: [...state.repos, action.payload] };
+    case 'DEL_REPO':
+      const repos = state.repos.filter(repo => repo != action.payload);
+      return { ...state, repos };
     default:
       return state;
   }
