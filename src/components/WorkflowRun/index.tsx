@@ -13,12 +13,12 @@ export type WorkflowRun = {
 export function WorkflowRun(props: WorkflowRun) {
   const status = css[props.status];
   const conclusion = css[props.conclusion];
+  const completed = props.status === "completed";
 
   return <div className={`${css.card} ${status} ${conclusion}`}>
     <Img src={props.avatar} alt={props.actor} width="20" height="20" />
     <p>{props.name}</p>
     <p>{props.branch}</p>
-    <p>status: {props.status}</p>
-    <p>conclusion: {props.conclusion}</p>
+    <p>{!completed ? props.status : props.conclusion}</p>
   </div>;
 }

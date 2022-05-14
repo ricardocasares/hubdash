@@ -20,13 +20,49 @@
 }
 
 .card.success {
-  background: rgba(160, 255, 160);
+  background: #b2f2bb;
 }
 
-.card.skipped {
-  background: #eee;
+.card.stale,
+.card.skipped,
+.card.neutral,
+.card.timed_out,
+.card.cancelled {
+  background: #868e96;
 }
 
 .card.failure {
-  background: rgb(255, 160, 160);
+  background: #ff8787;
+}
+
+.card.queued {
+  color: white;
+  background: repeating-linear-gradient(
+    -45deg,
+    #212529,
+    #212529 0.5rem,
+    #343a40 0.5rem,
+    #343a40 1rem
+  );
+  background-size: 300% 300%;
+  animation: indefinite 50s linear infinite reverse;
+}
+
+.card.in_progress {
+  color: white;
+  background: repeating-linear-gradient(
+    -45deg,
+    #1971c2,
+    #1971c2 0.5rem,
+    #1864ab 0.5rem,
+    #1864ab 1rem
+  );
+  background-size: 300% 300%;
+  animation: indefinite 50s linear infinite reverse;
+}
+
+@keyframes indefinite {
+  to {
+    background-position: 100% 100%;
+  }
 }

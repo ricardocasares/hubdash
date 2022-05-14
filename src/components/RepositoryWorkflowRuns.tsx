@@ -8,7 +8,7 @@ export type RepositoryWorkflowRuns = {
 
 export const RepositoryWorkflowRuns = (props: RepositoryWorkflowRuns) => {
   const { dispatch } = useGlobalState();
-  const { data, error, loading } = useWorkflowRuns({ repo: props.repo, refreshInterval: 60000 });
+  const { data, error, loading } = useWorkflowRuns({ repo: props.repo, refreshInterval: 30000 });
 
   if (loading) {
     return <p>Loading...</p>;
