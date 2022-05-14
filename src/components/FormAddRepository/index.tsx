@@ -6,8 +6,13 @@ export function FormAddRepository() {
   const [payload, setPayload] = useState("");
   const { dispatch } = useGlobalState();
 
+  const onClick = () => {
+    dispatch({ type: "ADD_REPO", payload });
+    setPayload("");
+  };
+
   return <div className={css.form}>
-    <input type="text" placeholder="owner/repo" onChange={e => setPayload(e.target.value)} />
-    <input type="button" onClick={() => dispatch({ type: "ADD_REPO", payload })} value="Add" />
+    <input type="text" placeholder="owner/repo" onChange={e => setPayload(e.target.value)} value={payload} />
+    <input type="button" onClick={onClick} value="Add" />
   </div>;
 }
