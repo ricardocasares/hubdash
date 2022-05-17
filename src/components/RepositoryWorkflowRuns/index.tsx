@@ -1,3 +1,4 @@
+import css from "./styles.module.css";
 import { WorkflowRun } from "@/components/WorkflowRun";
 import { useGlobalState } from "@/hooks/useGlobalState";
 import { useWorkflowRuns } from "@/hooks/useWorkflowRuns";
@@ -15,9 +16,9 @@ export const RepositoryWorkflowRuns = (props: RepositoryWorkflowRuns) => {
   }
 
   return (
-    <div style={{ padding: "10px" }}>
-      <h2 style={{ color: "white", fontWeight: 'normal', margin: "0 0 5px 0", padding: 0, fontSize: "12px" }}>{props.repo} <button onClick={() => dispatch({ type: "DEL_REPO", payload: props.repo })}>x</button></h2>
-      <div style={{ display: "grid", gap: "10px", gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))" }}>
+    <div className={css.repo}>
+      <h2>{props.repo} <button onClick={() => dispatch({ type: "DEL_REPO", payload: props.repo })}>x</button></h2>
+      <div className={css.runs}>
         {error && "Error"}
         {data && data.map(run => <WorkflowRun key={run.id} {...run} />)}
       </div>

@@ -1,0 +1,17 @@
+.repo {
+  padding: 10px;
+}
+
+.repo h2 {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.runs {
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
