@@ -50,8 +50,8 @@ export async function workflowRuns(
 type WorkflowRun = {
   id: number;
   name: string;
-  status: string;
-  conclusion: string;
+  status: "queued" | "in_progress" | "completed";
+  conclusion: "success" | "failure";
   head_branch: string;
   actor: {
     login: string;

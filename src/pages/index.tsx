@@ -11,8 +11,8 @@ const Home: NextPage = () => {
     <Head>
       <title>hubdash</title>
     </Head>
-    <FormAddRepository />
     <Repositories />
+    <FormAddRepository />
   </div>;
 
 };
