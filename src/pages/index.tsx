@@ -7,7 +7,7 @@ import { FormAddRepository } from "@/components/FormAddRepository";
 const Repositories = dynamic(() => import('@/components/Repositories'), { ssr: false });
 
 const Home: NextPage = () =>
-  <Stack v pad gap as="main">
+  <Stack v pad gap full as="main">
     <Head>
       <title>hubdash</title>
     </Head>

@@ -1,31 +1,22 @@
-import { useState } from "react";
-import { useGlobalState } from "@/hooks/useGlobalState";
-import { styled } from "@/css";
+import { ChangeEventHandler, useState } from "react";
 import { Stack } from "@/components/Stack";
-
-const Input = styled('input', {
-  "padding": "$2",
-  "border": "2px solid $gray5",
-  "background": "transparent",
-  "color": "$gray12",
-  "fontSize": "$base",
-  "&:disabled": {
-    color: "$gray9"
-  }
-});
+import { Input } from "@/components/Input";
+import { useGlobalState } from "@/hooks/useGlobalState";
 
 export function FormAddRepository() {
   const [payload, setPayload] = useState("");
   const { dispatch } = useGlobalState();
+  const onChange: ChangeEventHandler<HTMLInputElement> = (e) => setPayload(e.target.value);
   const disabled = payload.length < 3;
 
-  const onClick = () => {
+  const addRepo = () => {
     dispatch({ type: "ADD_REPO", payload });
     setPayload("");
   };
 
-  return <Stack h gap>
-    <Input css={{ flex: 1 }} type="text" placeholder="owner/repo" onChange={e => setPayload(e.target.value)} value={payload} />
-    <Input type="button" onClick={onClick} value="Add repository" disabled={disabled} />
+
+  return <Stack as="form" h gap>
+    <Input type="text" onChange={onChange} placeholder="owner/repo" value={payload} css={{ flex: 1 }} />
+    <Input type="submit" onClick={addRepo} value="Add repository" disabled={disabled} />
   </Stack>;
 }

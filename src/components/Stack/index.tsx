@@ -1,6 +1,7 @@
 import { styled } from "@/css";
+import { Box } from "@/components/Box";
 
-export const Stack = styled('div', {
+export const Stack = styled(Box, {
   display: "flex",
   minWidth: 0,
   variants: {
