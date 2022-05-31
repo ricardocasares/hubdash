@@ -4,6 +4,17 @@ export const Stack = styled('div', {
   display: "flex",
   minWidth: 0,
   variants: {
+    gap: {
+      true: {
+        gap: "$1",
+      },
+      sm: {
+        gap: "$2"
+      },
+      md: {
+        gap: "$4"
+      }
+    },
     pad: {
       true: {
         padding: "$1"
@@ -25,18 +36,7 @@ export const Stack = styled('div', {
         flexDirection: "column"
       }
     },
-    gap: {
-      true: {
-        gap: "$1",
-      },
-      sm: {
-        gap: "$2"
-      },
-      md: {
-        gap: "$4"
-      }
-    },
-    "fill": {
+    fill: {
       true: {
         "> *": {
           flex: "1"
