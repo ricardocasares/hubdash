@@ -1,7 +1,6 @@
 import { styled } from "@/css";
 
 export const Text = styled("p", {
-  color: "$gray10",
   margin: 0,
   padding: 0,
   fontSize: "$base",

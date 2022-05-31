@@ -1,6 +1,6 @@
 import { TrashIcon } from '@radix-ui/react-icons';
 import { styled } from "@/css";
-import { Text } from "@/components/Text";
+import { Code } from '@/components/Code';
 import { Stack } from "@/components/Stack";
 import { WorkflowRun } from "@/components/WorkflowRun";
 import { useGlobalState } from "@/hooks/useGlobalState";
@@ -27,12 +27,12 @@ export const RepositoryWorkflowRuns = (props: RepositoryWorkflowRuns) => {
   const title = error ? `Couldn't load ${props.repo}` : loading ? `Loading ${props.repo}...` : props.repo;
 
   return (
-    <Stack v gap pad>
-      <Stack h gap>
+    <Stack v>
+      <Stack h pad gap>
         <Button onClick={() => dispatch({ type: "DEL_REPO", payload: props.repo })}>
           <TrashIcon />
         </Button>
-        <Text>{title}</Text>
+        <Code>{title}</Code>
       </Stack>
 
       {data &&
@@ -43,7 +43,7 @@ export const RepositoryWorkflowRuns = (props: RepositoryWorkflowRuns) => {
 
       {loading &&
         <Stack h gap fill>
-          {Array(5).fill(1).map((_, idx) => <WorkflowRun key={idx} name="Loading..." avatar="" actor="username" status="queued" branch="branch" />)}
+          {Array(5).fill(1).map((_, idx) => <WorkflowRun key={idx} name="Loading..." avatar="https://avatars.githubusercontent.com/u/87520916?s=200&v=4" actor="username" status="queued" branch="branch" />)}
         </Stack>
       }
     </Stack>

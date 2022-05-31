@@ -24,7 +24,7 @@ export function FormAddRepository() {
     setPayload("");
   };
 
-  return <Stack h gap pad>
+  return <Stack h gap>
     <Input css={{ flex: 1 }} type="text" placeholder="owner/repo" onChange={e => setPayload(e.target.value)} value={payload} />
     <Input type="button" onClick={onClick} value="Add repository" disabled={disabled} />
   </Stack>;
